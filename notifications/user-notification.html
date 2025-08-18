@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vivaldi Update Detected</title>
+    <style>
+      /* Enhanced accessibility styles */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #1a1a1a;
+        color: #ffffff;
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .notification-container {
+        background: #2c3e50;
+        border-radius: 12px;
+        padding: 30px;
+        max-width: 600px;
+        width: 100%;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
+
+      .icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        color: #3498db;
+        margin-bottom: 25px;
+        font-size: 1.8rem;
+      }
+
+      .version-info {
+        background: #34495e;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 25px 0;
+      }
+
+      .version-change {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      #previous-version {
+        color: #e74c3c;
+      }
+
+      #current-version {
+        color: #2ecc71;
+      }
+
+      .actions {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+
+      .btn {
+        padding: 15px 25px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-width: 180px;
+      }
+
+      .btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      .btn-primary {
+        background: #3498db;
+        color: white;
+      }
+
+      .btn-primary:hover:not(:disabled) {
+        background: #2980b9;
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background: #95a5a6;
+        color: white;
+      }
+
+      .btn-secondary:hover:not(:disabled) {
+        background: #7f8c8d;
+      }
+
+      .btn-close {
+        background: #e74c3c;
+        color: white;
+      }
+
+      .btn-close:hover:not(:disabled) {
+        background: #c0392b;
+      }
+
+      #progress {
+        margin: 20px 0;
+        display: none;
+      }
+
+      .progress-bar {
+        background: #34495e;
+        border-radius: 8px;
+        height: 12px;
+        overflow: hidden;
+      }
+
+      #progress-bar {
+        background: #3498db;
+        height: 100%;
+        transition: width 0.3s ease;
+        width: 0%;
+      }
+
+      .status {
+        margin: 20px 0;
+        font-size: 1.1rem;
+        min-height: 30px;
+      }
+
+      @media (prefers-contrast: high) {
+        body {
+          background: #000000;
+          color: #ffffff;
+        }
+        .notification-container {
+          background: #000000;
+          border: 4px solid #ffffff;
+        }
+        .btn-primary {
+          background: #0000ff;
+          border: 2px solid #ffffff;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="notification-container">
+      <div class="icon">🔄</div>
+      <h1>Vivaldi Update Detected</h1>
+
+      <div class="version-info">
+        <div>Version Updated:</div>
+        <div class="version-change">
+          <span id="previous-version">Loading...</span> →
+          <span id="current-version">Loading...</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" onclick="startAutoDeployment()">🚀 Auto-Deploy Now</button>
+        <button class="btn btn-secondary" onclick="manualDeployment()">
+          📋 Manual Instructions
+        </button>
+        <button class="btn btn-close" onclick="closeNotification()">❌ Close</button>
+      </div>
+
+      <div id="progress">
+        <div class="progress-bar">
+          <div id="progress-bar"></div>
+        </div>
+      </div>
+
+      <div id="status" class="status"></div>
+    </div>
+
+    <script>
+      // Initialize version display
+      const previousVersion = '7.5.3735.56'
+      const currentVersion = '7.5.3735.58'
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('previous-version').textContent = previousVersion
+        document.getElementById('current-version').textContent = currentVersion
+      })
+
+      // Call Node.js server endpoints
+      async function callNodeScript(endpoint) {
+        try {
+          const response = await fetch(`http://localhost:3842/${endpoint}`)
+          const result = await response.json()
+
+          if (!result.success) {
+            throw new Error(result.message)
+          }
+
+          return result
+        } catch (error) {
+          throw new Error(`Failed to call ${endpoint}: ${error.message}`)
+        }
+      }
+
+      // Enhanced auto-deployment with client-side restart handling
+      async function startAutoDeployment() {
+        const statusMessage = document.getElementById('status')
+        const progressFill = document.getElementById('progress-bar')
+        const progressContainer = document.getElementById('progress')
+
+        // Show progress bar
+        progressContainer.style.display = 'block'
+
+        // Disable buttons
+        document.querySelectorAll('.btn').forEach(btn => (btn.disabled = true))
+
+        try {
+          // Step 1: Build and Deploy
+          statusMessage.textContent = '🔨 Step 1: Building project...'
+          statusMessage.style.color = '#3498db'
+          progressFill.style.width = '20%'
+
+          await callNodeScript('build')
+
+          // Step 2: Close Vivaldi (but close this tab first!)
+          statusMessage.textContent = '🔄 Step 2: Preparing to close Vivaldi...'
+          progressFill.style.width = '40%'
+
+          // **KEY FIX**: Close this tab BEFORE closing Vivaldi
+          statusMessage.textContent = '✅ Deployment complete! Closing notification tab...'
+          progressFill.style.width = '60%'
+          progressFill.style.background = '#2ecc71'
+
+          // Give user a moment to see the success message
+          await new Promise(resolve => setTimeout(resolve, 1500))
+
+          // Initiate Vivaldi close and restart on server
+          statusMessage.textContent = '🚀 Initiating Vivaldi restart...'
+          progressFill.style.width = '80%'
+
+          // Start the server-side close and restart process
+          fetch('http://localhost:3842/auto-deploy').catch(() => {
+            // Ignore fetch errors since Vivaldi will be closing
+          })
+
+          // Small delay to ensure server receives the request
+          await new Promise(resolve => setTimeout(resolve, 500))
+
+          // **CRITICAL**: Close this tab before Vivaldi closes completely
+          statusMessage.textContent = '✅ Complete! Vivaldi restarting...'
+          progressFill.style.width = '100%'
+
+          // Auto-close the tab after brief delay
+          setTimeout(() => {
+            window.close()
+          }, 1000)
+        } catch (error) {
+          statusMessage.textContent = `❌ Deployment failed: ${error.message}`
+          statusMessage.style.color = '#e74c3c'
+          progressFill.style.background = '#e74c3c'
+
+          // Re-enable buttons for retry
+          document.querySelectorAll('.btn').forEach(btn => (btn.disabled = false))
+
+          // Show manual instructions after error
+          setTimeout(() => {
+            manualDeployment()
+          }, 2000)
+        }
+      }
+
+      // Manual deployment instructions
+      function manualDeployment() {
+        const instructions = `
+Manual Deployment Steps:
+
+1. Open Command Prompt in project directory
+2. Run: npm run build
+3. Close Vivaldi completely
+4. Run: npm run deploy
+5. Restart Vivaldi
+
+Project Directory: ${
+          window.location.href.includes('projectPath')
+            ? new URLSearchParams(window.location.search).get('projectPath')
+            : 'See project folder'
+        }
+            `
+
+        alert(instructions)
+
+        // Copy commands to clipboard if possible
+        if (navigator.clipboard) {
+          navigator.clipboard
+            .writeText('npm run build && npm run deploy')
+            .then(() => {
+              alert('Commands copied to clipboard!')
+            })
+            .catch(() => {
+              console.log('Could not copy to clipboard')
+            })
+        }
+      }
+
+      // Close notification tab
+      function closeNotification() {
+        window.close()
+      }
+
+      // Auto-focus on primary action for accessibility
+      window.addEventListener('load', () => {
+        document.querySelector('.btn-primary').focus()
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "see-vivaldi",
+  "version": "1.0.0",
+  "description": "Enhanced visual accessibility for internal Vivaldi pages",
+  "main": "src/scripts/index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "postbuild": "node scripts/deploy.js",
+    "deploy": "node scripts/deploy.js",
+    "monitor": "node scripts/updates-handler/vivaldi-monitor.js",
+    "dev": "webpack --mode development --watch",
+    "clean": "rimraf dist",
+    "docs:toc": "node scripts/admin/generate-docs-toc.js"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "rimraf": "^5.0.5"
+  },
+  "keywords": [
+    "vivaldi",
+    "accessibility",
+    "browser-extension"
+  ],
+  "author": "Jeff-411",
+  "license": "MIT"
+}

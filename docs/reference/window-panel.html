@@ -1,0 +1,454 @@
+<!-- docs/reference/window-panel.html -->
+
+<div class="panel" id="window-panel">
+  <header>
+    <h1>
+      <span id="ui-region-panel-title">Windows and Tabs</span
+      ><button class="close transparent" title="Close Panel" tabindex="-1">
+        <span class="VivaldiSvgIcon" style="--IconSize: 16"
+          ><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 1 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414Z"></path>
+          </svg>
+        </span>
+      </button>
+    </h1>
+    <div class="toolbar toolbar-default toolbar-wrap" role="toolbar" aria-label="Windows Panel">
+      <input class="tabsearch" placeholder="Search" type="search" value="" />
+      <div class="button-toolbar" aria-hidden="false">
+        <button
+          tabindex="-1"
+          title="New"
+          type="button"
+          aria-label="New"
+          class="ToolbarButton-Button">
+          <span class="button-icon" aria-hidden="true"
+            ><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                d="M8.5 4C8.22386 4 8 4.22386 8 4.5V8H4.5C4.22386 8 4 8.22386 4 8.5C4 8.77614 4.22386 9 4.5 9H8V12.5C8 12.7761 8.22386 13 8.5 13C8.77614 13 9 12.7761 9 12.5V9H12.5C12.7761 9 13 8.77614 13 8.5C13 8.22386 12.7761 8 12.5 8H9V4.5C9 4.22386 8.77614 4 8.5 4Z"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="sortselector sortselector-compact">
+    <div class="sortselector-area">
+      <select class="sortselector-dropdown" title="Sort by..." tabindex="-1">
+        <option value="manually">Sort Manually</option>
+        <option value="title">Sort by Title</option>
+        <option value="pageItem.hostname">Sort by Host</option>
+        <option value="pageItem.domain">Sort by Domain</option>
+        <option value="sound">Sort by Audio Status</option>
+      </select>
+    </div>
+    <button class="sortselector-button" title="Sort Ascending" tabindex="-1" disabled="">
+      <svg width="11" height="6" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M1.354 4.894a.497.497 0 1 0 .702.702l3.423-3.423L8.9 5.596a.491.491 0 1 0 .695-.695L5.851 1.156a.49.49 0 0 0-.27-.137.496.496 0 0 0-.48.128L1.354 4.894z"></path>
+      </svg>
+    </button>
+  </div>
+  <section class="outerScrollbar">
+    <div class="vivaldi-tree">
+      <div class="VivaldiList" tabindex="0" style="height: 487px; pointer-events: auto">
+        <div class="VivaldiList-Offset" style="top: 0px">
+          <div
+            data-id="window-791953307"
+            class="tree-item"
+            data-selected=""
+            data-lead=""
+            data-expanded=""
+            style="height: 34px; content-visibility: auto">
+            <div
+              class="tree-row folder tree-row-selected tree-row-selected--first tree-row-selected--last"
+              data-selected=""
+              draggable="true">
+              <label title="History" class="window-entry window-parent"
+                ><span class="expand-icon" style="margin-left: 0px; visibility: visible"
+                  ><svg width="10" height="10" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill="currentColor"
+                      stroke-width="0"
+                      d="M7 5L3.366 8.634A.8.8 0 012 8.07V1.93a.8.8 0 011.366-.565L7 5z"></path>
+                  </svg> </span
+                ><svg width="16" height="16" viewBox="0 0 16 16" class="folder-icon">
+                  <g transform="translate(-1, 1)" fill="none" stroke="currentColor">
+                    <polygon points="16.5 3.5 16.5 0.5 1.5 0.5 1.5 3.5"></polygon>
+                    <path d="M1.5,3.5 L1.5,12.5"></path>
+                    <path d="M16.5,3.5 L16.5,12.5"></path>
+                    <path d="M1.5,12.5 L16.5,12.5"></path>
+                    <path d="M4.5,0.5 L4.5,3.5"></path>
+                    <path d="M7.5,0.5 L7.5,3.5"></path>
+                  </g></svg
+                ><span class="title"><div class="text">History</div></span
+                ><span class="item-count">10</span></label
+              >
+            </div>
+          </div>
+          <div
+            data-id="pinned-791953307"
+            class="tree-item"
+            data-expanded=""
+            style="height: 28px; content-visibility: auto">
+            <div class="tree-row folder" draggable="true">
+              <label title="Pinned Tabs" class="window-entry window-parent window-child"
+                ><span class="expand-icon" style="margin-left: 16px; visibility: visible"
+                  ><svg width="10" height="10" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill="currentColor"
+                      stroke-width="0"
+                      d="M7 5L3.366 8.634A.8.8 0 012 8.07V1.93a.8.8 0 011.366-.565L7 5z"></path>
+                  </svg> </span
+                ><svg width="16" height="16" viewBox="0 0 16 16" class="folder-icon">
+                  <g transform="translate(3, 2)" fill="none" stroke="currentColor">
+                    <polygon
+                      points="2.5 5.5 6.5 9.5 7.5 9.5 7.5 5.5 11.5 2.5 9.5 0.5 6.5 4.5 2.5 4.5"></polygon>
+                    <polygon points="0 12 3 8 4 9"></polygon>
+                  </g></svg
+                ><span class="title"><div class="text">Pinned Tabs</div></span
+                ><span class="item-count">1</span></label
+              >
+            </div>
+          </div>
+          <div data-id="791953308" class="tree-item" style="height: 28px; content-visibility: auto">
+            <div class="tree-row" draggable="true">
+              <label title="Bookmarks" class="window-entry window-child"
+                ><span class="svg-icon" style="margin-left: 32px"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5 1C3.89543 1 3 1.89543 3 3V14.0329C3 14.6319 3.66761 14.9892 4.16603 14.6569L8 12.1009L11.834 14.6569C12.3324 14.9892 13 14.6319 13 14.0329V3C13 1.89543 12.1046 1 11 1H5ZM4 3C4 2.44772 4.44772 2 5 2H11C11.5523 2 12 2.44772 12 3V13.5657L8 10.8991L4 13.5657V3Z"></path>
+                  </svg> </span
+                ><span class="title"><div class="text">Bookmarks</div></span></label
+              >
+            </div>
+          </div>
+          <div data-id="791953309" class="tree-item" style="height: 28px; content-visibility: auto">
+            <div class="tree-row" draggable="true">
+              <label title="History" class="window-entry window-child"
+                ><span class="svg-icon" style="margin-left: 16px"
+                  ><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      d="M6 2h4a4 4 0 014 4v4a4 4 0 01-4 4H6a4 4 0 01-4-4V6a4 4 0 014-4zM1 6a5 5 0 015-5h4a5 5 0 015 5v4a5 5 0 01-5 5H6a5 5 0 01-5-5V6zm6-2h1v4h2v1H7V4z"></path>
+                  </svg> </span
+                ><span class="title active"><div class="text">History</div></span
+                ><span class="close" title="Close" tabindex="-1"
+                  ><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 1 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414Z"></path>
+                  </svg> </span
+              ></label>
+            </div>
+          </div>
+          <div data-id="791953310" class="tree-item" style="height: 28px; content-visibility: auto">
+            <div class="tree-row" draggable="true">
+              <label title="Get started | Vivaldi Browser" class="window-entry window-child"
+                ><img
+                  class=""
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  srcset="
+                    chrome://favicon/size/16/iconurl/https://vivaldi.com/wp-content/uploads/cropped-favicon-32x32.png 16w,
+                    chrome://favicon/size/24/iconurl/https://vivaldi.com/wp-content/uploads/cropped-favicon-32x32.png 24w,
+                    chrome://favicon/size/32/iconurl/https://vivaldi.com/wp-content/uploads/cropped-favicon-32x32.png 32w
+                  "
+                  style="margin-left: 16px" /><span class="title"
+                  ><div class="text">Get started | Vivaldi Browser</div></span
+                ><span class="close" title="Close" tabindex="-1"
+                  ><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 1 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414Z"></path>
+                  </svg> </span
+              ></label>
+            </div>
+          </div>
+          <div data-id="791953311" class="tree-item" style="height: 28px; content-visibility: auto">
+            <div class="tree-row" draggable="true">
+              <label title="What's New in Vivaldi" class="window-entry window-child"
+                ><img
+                  class=""
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  srcset="
+                    chrome://favicon/size/16/iconurl/https://vivaldi.com/wp-content/uploads/cropped-favicon-32x32.png 16w,
+                    chrome://favicon/size/24/iconurl/https://vivaldi.com/wp-content/uploads/cropped-favicon-32x32.png 24w,
+                    chrome://favicon/size/32/iconurl/https://vivaldi.com/wp-content/uploads/cropped-favicon-32x32.png 32w
+                  "
+                  style="margin-left: 16px" /><span class="title"
+                  ><div class="text">What's New in Vivaldi</div></span
+                ><span class="close" title="Close" tabindex="-1"
+                  ><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 1 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414Z"></path>
+                  </svg> </span
+              ></label>
+            </div>
+          </div>
+          <div data-id="791953312" class="tree-item" style="height: 28px; content-visibility: auto">
+            <div class="tree-row" draggable="true">
+              <label title="Apple - Wikipedia" class="window-entry window-child"
+                ><img
+                  class=""
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  srcset="
+                    chrome://favicon/size/16/iconurl/https://en.wikipedia.org/static/favicon/wikipedia.ico 16w,
+                    chrome://favicon/size/24/iconurl/https://en.wikipedia.org/static/favicon/wikipedia.ico 24w,
+                    chrome://favicon/size/32/iconurl/https://en.wikipedia.org/static/favicon/wikipedia.ico 32w
+                  "
+                  style="margin-left: 16px" /><span class="title"
+                  ><div class="text">Apple - Wikipedia</div></span
+                ><span class="close" title="Close" tabindex="-1"
+                  ><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 1 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414Z"></path>
+                  </svg> </span
+              ></label>
+            </div>
+          </div>
+          <div data-id="791953313" class="tree-item" style="height: 28px; content-visibility: auto">
+            <div class="tree-row" draggable="true">
+              <label title="Experimental Features" class="window-entry window-child"
+                ><img
+                  class=""
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  src="chrome://favicon/size/16@2x/chrome-extension://mpognobbkildjkofajifpdfhcoklimli/components/experiments/experiments.html"
+                  style="margin-left: 16px" /><span class="title"
+                  ><div class="text">Experimental Features</div></span
+                ><span class="close" title="Close" tabindex="-1"
+                  ><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 1 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414Z"></path>
+                  </svg> </span
+              ></label>
+            </div>
+          </div>
+          <div data-id="791953314" class="tree-item" style="height: 28px; content-visibility: auto">
+            <div class="tree-row" draggable="true">
+              <label
+                title="Electronics, Cars, Fashion, Collectibles &amp; More | eBay"
+                class="window-entry window-child"
+                ><img
+                  class=""
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  srcset="
+                    chrome://favicon/size/16/iconurl/https://pages.ebay.com/favicon.ico 16w,
+                    chrome://favicon/size/24/iconurl/https://pages.ebay.com/favicon.ico 24w,
+                    chrome://favicon/size/32/iconurl/https://pages.ebay.com/favicon.ico 32w
+                  "
+                  style="margin-left: 16px" /><span class="title"
+                  ><div class="text">
+                    Electronics, Cars, Fashion, Collectibles &amp; More | eBay
+                  </div></span
+                ><span class="close" title="Close" tabindex="-1"
+                  ><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 1 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414Z"></path>
+                  </svg> </span
+              ></label>
+            </div>
+          </div>
+          <div data-id="791953315" class="tree-item" style="height: 28px; content-visibility: auto">
+            <div class="tree-row" draggable="true">
+              <label title="Google" class="window-entry window-child"
+                ><img
+                  class=""
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  srcset="
+                    chrome://favicon/size/16/iconurl/https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico 16w,
+                    chrome://favicon/size/24/iconurl/https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico 24w,
+                    chrome://favicon/size/32/iconurl/https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico 32w
+                  "
+                  style="margin-left: 16px" /><span class="title"
+                  ><div class="text">Google</div></span
+                ><span class="close" title="Close" tabindex="-1"
+                  ><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 1 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414Z"></path>
+                  </svg> </span
+              ></label>
+            </div>
+          </div>
+          <div data-id="791953316" class="tree-item" style="height: 28px; content-visibility: auto">
+            <div class="tree-row" draggable="true">
+              <label title="What's New in Vivaldi" class="window-entry window-child"
+                ><img
+                  class=""
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  srcset="
+                    chrome://favicon/size/16/iconurl/https://vivaldi.com/wp-content/uploads/cropped-favicon-32x32.png 16w,
+                    chrome://favicon/size/24/iconurl/https://vivaldi.com/wp-content/uploads/cropped-favicon-32x32.png 24w,
+                    chrome://favicon/size/32/iconurl/https://vivaldi.com/wp-content/uploads/cropped-favicon-32x32.png 32w
+                  "
+                  style="margin-left: 16px" /><span class="title"
+                  ><div class="text">What's New in Vivaldi</div></span
+                ><span class="close" title="Close" tabindex="-1"
+                  ><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 1 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414Z"></path>
+                  </svg> </span
+              ></label>
+            </div>
+          </div>
+          <div data-id="791953317" class="tree-item" style="height: 31px; content-visibility: auto">
+            <div class="tree-row" draggable="true">
+              <label title="Start Page" class="window-entry window-child last-window-child"
+                ><span class="svg-icon" style="margin-left: 16px"
+                  ><svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M3 2C2.44772 2 2 2.44772 2 3V6C2 6.55228 2.44772 7 3 7H6C6.55228 7 7 6.55228 7 6V3C7 2.44772 6.55228 2 6 2H3ZM3 3H6V6H3V3Z"></path>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M2 10C2 9.44771 2.44772 9 3 9H6C6.55228 9 7 9.44771 7 10V13C7 13.5523 6.55228 14 6 14H3C2.44772 14 2 13.5523 2 13V10ZM6 10H3V13H6V10Z"></path>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M9 10C9 9.44771 9.44771 9 10 9H13C13.5523 9 14 9.44771 14 10V13C14 13.5523 13.5523 14 13 14H10C9.44771 14 9 13.5523 9 13V10ZM13 10H10V13H13V10Z"></path>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M9 3C9 2.44772 9.44771 2 10 2H13C13.5523 2 14 2.44772 14 3V6C14 6.55228 13.5523 7 13 7H10C9.44771 7 9 6.55228 9 6V3ZM13 3H10V6H13V3Z"></path>
+                  </svg> </span
+                ><span class="title"><div class="text">Start Page</div></span
+                ><span class="close" title="Close" tabindex="-1"
+                  ><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4.293 4.293a1 1 0 0 1 1.414 0L8 6.586l2.293-2.293a1 1 0 1 1 1.414 1.414L9.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L6.586 8 4.293 5.707a1 1 0 0 1 0-1.414Z"></path>
+                  </svg> </span
+              ></label>
+            </div>
+          </div>
+          <div
+            data-id="duplicatesFolder"
+            class="tree-item"
+            style="height: 40px; content-visibility: auto">
+            <div class="tree-row folder" draggable="true">
+              <label title="Duplicate Tabs" class="window-entry window-parent"
+                ><span class="expand-icon" style="margin-left: 0px; visibility: visible"
+                  ><svg width="10" height="10" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill="currentColor"
+                      stroke-width="0"
+                      d="M7 5L3.366 8.634A.8.8 0 012 8.07V1.93a.8.8 0 011.366-.565L7 5z"></path>
+                  </svg> </span
+                ><svg width="16" height="16" viewBox="0 0 16 16" class="folder-icon">
+                  <g stroke="currentColor" fill="none">
+                    <path
+                      d="M6.53846 15C5.68879 15 5 14.3112 5 13.4614V6.53862C5 5.68844 5.68945 4.9994 6.53954 5L13.4626 5.00489C14.3118 5.00549 15 5.69418 15 6.54354V13.4614C15 14.3112 14.3112 15 13.4615 15H6.53846Z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                    <path
+                      d="M11 4.85666V2.20471C11 1.54223 10.4632 1.00506 9.80084 1.0046L3.20084 1C2.53777 0.999538 2 1.53698 2 2.20011V8.79989C2 9.46271 2.53726 10 3.2 10H4.85714"
+                      stroke-linejoin="round"
+                      stroke-dasharray="2 2"></path>
+                  </g></svg
+                ><span class="title"><div class="text">Duplicate Tabs</div></span
+                ><span class="item-count">2</span></label
+              >
+            </div>
+          </div>
+          <div data-id="sync" class="tree-item" style="height: 40px; content-visibility: auto">
+            <div class="tree-row folder" draggable="true">
+              <label title="Synced Tabs" class="window-entry window-parent"
+                ><span class="expand-icon" style="margin-left: 0px; visibility: hidden"
+                  ><svg width="10" height="10" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill="currentColor"
+                      stroke-width="0"
+                      d="M7 5L3.366 8.634A.8.8 0 012 8.07V1.93a.8.8 0 011.366-.565L7 5z"></path>
+                  </svg> </span
+                ><svg width="16" height="16" viewBox="0 0 16 16" class="folder-icon">
+                  <g fill="none" stroke="currentColor">
+                    <path
+                      d="M13.246 7.338C14.268 7.668 15 8.558 15 9.6c0 1.326-1.17 2.9-2.634 2.9H3.5C2.044 12.5 1 10.922 1 9.6c0-1.051.735-1.944 1.77-2.269C2.913 6.354 3.827 5.6 4.936 5.6c.584 0 1.114.208 1.505.549C6.92 4.899 8.22 4 9.75 4c1.934 0 3.5 1.432 3.5 3.2l-.004.138Z"></path>
+                  </g></svg
+                ><span class="title"><div class="text">Synced Tabs</div></span></label
+              >
+            </div>
+          </div>
+          <div data-id="inactive" class="tree-item" style="height: 40px; content-visibility: auto">
+            <div class="tree-row folder" draggable="true">
+              <label title="Inactive Tabs" class="window-entry window-parent"
+                ><span class="expand-icon" style="margin-left: 0px; visibility: visible"
+                  ><svg width="10" height="10" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill="currentColor"
+                      stroke-width="0"
+                      d="M7 5L3.366 8.634A.8.8 0 012 8.07V1.93a.8.8 0 011.366-.565L7 5z"></path>
+                  </svg> </span
+                ><svg width="16" height="16" viewBox="0 0 16 16" class="folder-icon">
+                  <g stroke="currentColor" fill="none">
+                    <path
+                      d="M8.66668 1.36626C8.44741 1.34449 8.22501 1.33334 8.00001 1.33334C4.31811 1.33334 1.33334 4.31811 1.33334 8.00001C1.33334 11.6819 4.31811 14.6667 8.00001 14.6667C11.6819 14.6667 14.6667 11.6819 14.6667 8.00001C14.6667 7.54341 14.6207 7.09748 14.5333 6.66668"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                    <path
+                      d="M6.66667 7.33333H5.80474C5.5029 7.33333 5.21343 7.2134 5 7M9.33333 7.33333H10.1953C10.4971 7.33333 10.7866 7.2134 11 7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                    <path
+                      d="M7.99999 12C8.73637 12 9.33332 11.4031 9.33332 10.6667C9.33332 9.9303 8.73637 9.33334 7.99999 9.33334C7.26361 9.33334 6.66666 9.9303 6.66666 10.6667C6.66666 11.4031 7.26361 12 7.99999 12Z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                    <path
+                      d="M11.3333 1.33334H13.2983C13.7117 1.33334 13.9183 1.33334 13.9734 1.46674C14.0285 1.60014 13.8878 1.76016 13.6065 2.08021L11.9897 3.91981C11.7085 4.23986 11.5678 4.39988 11.6229 4.53328C11.6779 4.66668 11.8846 4.66668 12.298 4.66668H14"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </g></svg
+                ><span class="title"><div class="text">Inactive Tabs</div></span
+                ><span class="item-count">5</span></label
+              >
+            </div>
+          </div>
+          <div data-id="trash" class="tree-item" style="height: 40px; content-visibility: auto">
+            <div class="tree-row folder" draggable="true">
+              <label title="Closed Tabs" class="window-entry window-parent last-window-child"
+                ><span class="expand-icon" style="margin-left: 0px; visibility: visible"
+                  ><svg width="10" height="10" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill="currentColor"
+                      stroke-width="0"
+                      d="M7 5L3.366 8.634A.8.8 0 012 8.07V1.93a.8.8 0 011.366-.565L7 5z"></path>
+                  </svg> </span
+                ><svg width="16" height="16" viewBox="0 0 16 16" class="folder-trash">
+                  <g fill="none" stroke="currentColor">
+                    <path d="M1 1.5h3.5v-1h7v1h-8H15"></path>
+                    <path d="M3.5 3.5v11h9v-11zm3 8v-4zm3 0v-4z"></path>
+                  </g></svg
+                ><span class="title"><div class="text">Closed Tabs</div></span
+                ><span class="item-count">12</span></label
+              >
+            </div>
+          </div>
+        </div>
+        <div style="height: 505px"></div>
+      </div>
+    </div>
+  </section>
+</div>
