@@ -1,4 +1,4 @@
-// src/scripts/utils/enable-zoom.js - v1
+// src/scripts/utils/enable-zoom.js - v1.0.0.js
 
 /**
  * Enables zoom for the `.VivaldiList` div on the `vivaldi:bookmarks` page, and

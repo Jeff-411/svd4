@@ -1,4 +1,4 @@
-// src/scripts/utils/enable-zoom.js - v2
+// src/scripts/utils/enable-zoom.js - v1.0.1
 
 /**
  * DIAGNOSTIC VERSION OF enable-zoom.js - v1
