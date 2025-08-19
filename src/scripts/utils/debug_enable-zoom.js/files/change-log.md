@@ -72,3 +72,13 @@ Enhance the zoom utility with diagnostic instrumentation, configurable options, 
 #### DevNotes:
 
 Represents a “v2” diagnostic evolution while file name keeps semantic versioning (v1.0.1). Public API surface still the same exported `enableZoom` function signature (now with optional `options` param) to preserve compatibility. Fallback auto-scroll only engages during bookmark item drags when native behavior is absent—critical for high zoom accessibility. All CRITICAL constant values exactly match the code references: 2.0, 0.5, 3.0, 0.1, 60, 32. Added robust internal validation & grouped logging for maintainability. No changes to external selector logic aside from added dataset marker and logging refinements.
+
+### File name: enable-zoom-v1.0.2.js
+
+#### Purpose or Issue(s) Addressed:
+
+Refine user experience at varied zoom levels by preventing bottom item inaccessibility and excessive blank space through dynamic, data-driven bottom padding; standardize wheel shortcut (Ctrl/Cmd+Shift) and further consolidate diagnostic clarity without altering established CRITICAL constants.
+
+#### Changes Made:
+
+- Introduced piecewise bottom padding interpolation using empirical `PADDING_ANCHORS` (zoom→px) scaled via `BASELINE_HEIGHT` (531) to produce `PADDING_RATIOS
